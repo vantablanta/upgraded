@@ -1,0 +1,163 @@
+{%extends 'base.html' %}
+{%load static %}
+{%block body%}
+<header id="home">
+  {%include 'nav.html' %}
+  <!-- HERO SECTION -->
+  <div class="container-fluid hero">
+    <img src="{%static 'images/coding.svg' %}" alt="">
+    <div class="container">
+      <!-- Hero Title -->
+      <h1>FullStack<br>Software Engineer</h1>
+      <!-- Hero Title Info -->
+      <p>Hello, my name is Michelle Njeri from Nairobi. <br>I have over 2 years of experience in the industry.</p>
+      <div class="hero-btns">
+        <!-- Hero Btn First -->
+        <a data-scroll href="#about-us">More About Me</a>
+        <!-- Hero Btn Second -->
+        <a data-scroll href="#contact-us" style="display: none;"></a>
+      </div>
+    </div>
+  </div>
+  </div>
+</header>
+
+<section id="about-us" class="services">
+  <div class="container-fluid">
+    <div class="side-img">
+      <img src="{%static 'images/aside.svg' %}" alt="">
+    </div>
+    <div class="side2-img">
+      <img src="{%static 'images/aside2.svg' %}" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-lg-4 service-txt">
+          <h5>ABOUT ME</h5>
+          <h2>Anything you need, I've got you covered</h2>
+          <div class="hero-btns service-btn">
+            <a data-scroll href="#contact-us">Get in Touch</a>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="service-box">
+            <img src="{%static 'images/service-icon1.svg' %}" alt="">
+            <h3>Web <br>Design</h3>
+            <p>
+              I design applications using Figma and can transfer Figma and PSD designs to a HTML site.
+              I also design Wordpress Sites.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="service-box">
+            <img src="{%static 'images/service-icon2.svg' %}" alt="">
+            <!-- Service Title -->
+            <h3>Web <br>Development</h3>
+            <!-- Service Info -->
+            <p>
+              I develop web applications both frontend and backened, make APIs and consume them, among many other super
+              powers
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-lg-6">
+        <img src="{%static 'images/aboutimg.svg' %}" alt="">
+      </div>
+      <div class="col-12 col-sm-12 col-lg-6">
+        <h2>A little more ...<br></h2>
+        <p>I studied at the University of Nairobi and recently completed my FullStack Software Engineering Track from Moringa School.
+          I have gone through various online training offered by FreeCode Camp and The Odin Project. Over the years I have honed my skills 
+          by either working on client projects or personal projects. 
+        </p>
+        <p>I have worked for several companies both as a freelancer and a full time employee.
+          My work mostly involved maintaining an updating websites, designing wordpress sites, and designing
+          sdigital marketing content.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<section id="portfolio" class="portfolio">
+  <div class="container-fluid">
+    <div class="portfolio-aside">
+      <img class='img-responsive' src="{%static 'images/aside3.svg' %}" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h5>PORTFOLIO</h5>
+          <h2>See some of my<br>work.</h2>
+        </div>
+      </div>
+      <div class="row">
+        {%for item in items%}
+        <div class="col-12 col-lg-4 work-box">
+          <div class="photobox photobox_type10">
+            <div class="photobox__previewbox">
+              <!-- Replace Patch to Image Under -->
+              <img src="{{item.image.url}}" class="photobox__preview" alt="Preview">
+              <!-- Replace Image Title Under -->
+              <span class="photobox__label">{{item.about}}<br> <br>
+                <a class='text-light' href="{{item.url}}">View</a>
+              </span>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact-us" class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h5>CONTACT US</h5>
+        <h2>Get in Touch</h2>
+      </div>
+    </div>
+    <form action="" class="mb-3" method="POST">
+      {%csrf_token%}
+      <div class="row">
+        <div class="col-12 col-lg-6 email">
+          <input placeholder="Your email" type="email" id="email" name="email" size="30" required>
+        </div>
+        <div class="col-12 col-lg-6 email">
+          <input placeholder="Subject" type="subject" id="subject" name='subject' size="30" required>
+        </div>
+        <div class="col-12 message">
+          <textarea id="message" name="message" rows="5" cols="1" placeholder="Message here..."></textarea>
+        </div>
+        <div class="col-12 col-lg-6">
+          <button type="submit"  class="send-btn">Send Message</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+{%endblock%}
+
+<div class="row">
+      
+  <div class="col-12">
+    <div class="">
+      <!-- Send Message Btn -->
+      <a href="#">Send Message</a>
+    </div>
+  </div>
+</div>

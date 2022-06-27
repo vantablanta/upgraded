@@ -1,0 +1,37 @@
+{%load static %}
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <!-- Change Logo Img Here -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="interactive-menu-button">
+          <a href="#">
+            <span>Menu</span>
+          </a>
+        </div>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <!-- Nav Link -->
+            <a class="nav-link" data-scroll href="{%url 'home' %}">Home.<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <!-- Nav Link -->
+            <a class="nav-link" data-scroll href="#about-us">About Me.</a>
+          </li>
+          <li class="nav-item">
+            <!-- Nav Link -->
+            <a class="nav-link" data-scroll href="#portfolio">Portfolio.</a>
+          </li>
+          <li class="nav-item">
+            <!-- Nav Link -->
+            <a class="nav-link" data-scroll href="#contact-us">Contact Me.</a>
+          </li>
+        </ul>
+          <a data-scroll href="#contact-us">
+            <button class="contact-btn my-2 my-lg-0">Get in Touch</button>
+          </a>
+      </div>
+    </nav>
+  </div>
