@@ -1,0 +1,9 @@
+Hello Michelle
+
+Someone has just sent you a message. You can check your admin panel to see what they are saying 
+and reply to them. 
+
+Credentials are in your .env file or whatsapp business account 
+
+Regards, 
+Your Portfolio.

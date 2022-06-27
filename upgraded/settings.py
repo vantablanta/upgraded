@@ -120,7 +120,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
+EMAIL_USE_TLS = True
+EMAIL_HOST= str(os.getenv('EMAIL_HOST'))
+EMAIL_PORT= int(os.getenv('EMAIL_PORT'))
+EMAIL_HOST_USER= str(os.getenv('EMAIL_HOST_USER'))
+EMAIL_HOST_PASSWORD= str(os.getenv('EMAIL_HOST_PASSWORD'))
 
 cloudinary.config( 
     cloud_name = str(os.getenv('CLOUD_NAME')),
